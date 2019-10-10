@@ -46,26 +46,19 @@ def plot_nn(df,title,x,y,lines,filename='nn_py.png',logscale=False):
 
 def plot_all():
     
-    
     outFile = 'py.png'
     
+    filepath = os.path.join('output_data','fourpeaks_difficulty_all.csv')
+    fourpeaks_df = pd.read_csv(filepath)
+    plot_algs(fourpeaks_df,'FourPeaks_All',x='difficulty',y='epoch',label='label',score='score',filename=outFile)
+    plot_algs(fourpeaks_df,'FourPeaks_All',x='difficulty',y='time',label='label',score='score',filename=outFile)
+    plot_algs(fourpeaks_df,'FourPeaks_All',x='difficulty',y='score',label='label',score='score',filename=outFile)
     
-    
-    # fourpeaks_df = pd.read_csv('fourpeaks_difficulty_all.csv')
-    
-    # filepath = os.path.join('output_data','fourpeaks_difficulty_all.csv')
-    # knapsack_df = pd.read_csv(filepath)
-    # plot_algs(fourpeaks_df,'FourPeaks_All',x='difficulty',y='epoch',label='label',score='score',filename=outFile)
-    # plot_algs(fourpeaks_df,'FourPeaks_All',x='difficulty',y='time',label='label',score='score',filename=outFile)
-    # plot_algs(fourpeaks_df,'FourPeaks_All',x='difficulty',y='score',label='label',score='score',filename=outFile)
-    
-    # flipflop_df = pd.read_csv('flipflop_difficulty_all.csv')
-    
-    # filepath = os.path.join('output_data','flipflop_difficulty_all.csv')
-    # knapsack_df = pd.read_csv(filepath)
-    # plot_algs(flipflop_df,'FlipFlop_All',x='difficulty',y='epoch',label='label',score='score',filename=outFile,logscale=True)
-    # plot_algs(flipflop_df,'FlipFlop_All',x='difficulty',y='time',label='label',score='score',filename=outFile)
-    # plot_algs(flipflop_df,'FlipFlop_All',x='difficulty',y='score',label='label',score='score',filename=outFile)
+    filepath = os.path.join('output_data','flipflop_difficulty_all.csv')
+    flipflop_df = pd.read_csv(filepath)
+    plot_algs(flipflop_df,'FlipFlop_All',x='difficulty',y='epoch',label='label',score='score',filename=outFile,logscale=True)
+    plot_algs(flipflop_df,'FlipFlop_All',x='difficulty',y='time',label='label',score='score',filename=outFile)
+    plot_algs(flipflop_df,'FlipFlop_All',x='difficulty',y='score',label='label',score='score',filename=outFile)
     
     filepath = os.path.join('output_data','knapsack_difficulty_all.csv')
     knapsack_df = pd.read_csv(filepath)
@@ -97,7 +90,7 @@ def plot_all_nn():
     plot_nn(ga_df,'GA',x='epoch',y='error',lines=['testErr','trainErr'],filename=outFile)
     
 def run():
-    # plot_all()
+    plot_all()
     plot_all_nn()
 
 
