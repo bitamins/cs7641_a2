@@ -19,7 +19,7 @@ import opt.ga.StandardGeneticAlgorithm as StandardGeneticAlgorithm
 from func.nn.activation import LinearActivationFunction
 import shared.FixedIterationTrainer as FixedIterationTrainer
 
-sys.path.append("./ABAGAIL-RELU/ABAGAIL-relu.jar")
+
 from func.nn.activation import RELU
 
 
